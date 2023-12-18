@@ -1,8 +1,22 @@
 # AI Project 2 - Multi-Layer Neural Networks
 
-## Multi-class Classification
+This application enables you to construct Multi-Layer Neural Networks for the purpose of multi-class classification.
 
-![Task](./docs/task.png)
+## Requirements
+
+![Requirements](./docs/requirements.png)
+
+## Neural Network Strategy
+
+![Neural Network Strategy](./docs/strategy.png)
+
+The main difference is, in addition to the Sigmoid function, the hidden layers can utilize activation functions such as ReLU, Leaky ReLU, and Tanh. For multi-class classification, the output function can be Softmax.
+
+## Sample Datasets
+
+![Sample Datasets](./docs/samples.png)
+
+These datasets generated in Python using scikit-learn. [Here is the code used to do this](https://colab.research.google.com/drive/12ag2JvjJvO3cYyqMEH-y63PrahOOQwAM?usp=sharing).
 
 ## Usage
 
@@ -13,5 +27,3 @@ $ npm install
 # Run the development server
 $ npm run dev
 ```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
