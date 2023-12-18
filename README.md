@@ -7,7 +7,7 @@
 ## Usage
 
 ```bash
-# Install Deps
+# Install dependencies
 $ npm install
 
 # Run the development server
