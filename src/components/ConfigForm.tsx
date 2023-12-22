@@ -211,6 +211,7 @@ export function ConfigForm({ onConfigUpdated }: ConfigFormProps) {
               onChange={(e) => {
                 setLayersInput(e.target.value);
               }}
+              spellCheck={false}
             />
             <FormDescription>
               Each line should have a layer with number of neurons separated by

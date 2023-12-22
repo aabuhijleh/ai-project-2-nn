@@ -28,7 +28,12 @@ import { Toaster } from "@/components/ui/toaster";
 import { useToast } from "@/components/ui/use-toast";
 import { PredictForm } from "@/components/PredictForm";
 import { Input } from "@/components/ui/input";
-import { set } from "react-hook-form";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 
 export default function Home() {
   const { sampleTrainingDatasets, loading } = useLoadSampleDatasets();
@@ -177,10 +182,30 @@ export default function Home() {
               onChange={handleFileChange}
             />
 
-            <Button onClick={triggerFileInput}>
-              <Upload className="mr-2 w-4 h-4" />
-              Upload a dataset
-            </Button>
+            <TooltipProvider>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <Button onClick={triggerFileInput}>
+                    <Upload className="mr-2 w-4 h-4" />
+                    Upload a dataset
+                  </Button>
+                </TooltipTrigger>
+                <TooltipContent>
+                  <p className="w-72 p-4">
+                    Upload a CSV dataset where the first n-1 columns represent
+                    features and the nth column is the label for classification.
+                    You can download a sample from{" "}
+                    <a href="/samples/4 Classes.csv" className="underline">
+                      here
+                    </a>
+                    .{" "}
+                    <span className="text-muted-foreground">
+                      Note: column names are ignored.
+                    </span>
+                  </p>
+                </TooltipContent>
+              </Tooltip>
+            </TooltipProvider>
           </div>
 
           {selectedDatasetChartInfo && (
@@ -197,7 +222,7 @@ export default function Home() {
         <div className="flex flex-col gap-4 w-40">
           {selectedDatasetInfo && (
             <Button
-              className="w-full bg-green-500 hover:bg-green-600"
+              className="w-full bg-green-700 hover:bg-green-800 text-white"
               disabled={trainingProgress.loading}
               onClick={() => {
                 train({
