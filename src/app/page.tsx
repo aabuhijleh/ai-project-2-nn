@@ -132,18 +132,21 @@ export default function Home() {
 
   return (
     <main className="flex flex-col min-h-screen items-center p-24 gap-12">
-      <section className="w-full p-12 bg-slate-800">
+      <section id="config" className="w-full p-12 bg-slate-800">
         <ConfigForm
           onConfigUpdated={(config) => {
             setConfig(config);
-            document.getElementById("neural-network")?.scrollIntoView({
+            document.getElementById("dataset")?.scrollIntoView({
               behavior: "smooth",
             });
           }}
         />
       </section>
 
-      <section className="flex w-full items-center justify-between p-12 gap-12 bg-slate-800">
+      <section
+        id="dataset"
+        className="flex w-full items-center justify-between p-12 gap-12 bg-slate-800"
+      >
         <div className="flex flex-col w-[500px] gap-6">
           <div className="flex gap-4">
             <Select
@@ -187,7 +190,7 @@ export default function Home() {
           )}
         </div>
 
-        <div id="neural-network" className="flex items-center gap-6">
+        <div className="flex items-center gap-6">
           <NeuralNetworkVisualization layers={config.layers} />
         </div>
 
