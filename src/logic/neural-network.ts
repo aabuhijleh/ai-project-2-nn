@@ -222,7 +222,9 @@ export class NeuralNetwork {
     NeuralNetworkUtils.shuffleArray(trainingData);
 
     // Split the dataset into training and testing sets
-    const splitIndex = Math.floor(trainingData.length * this.testDataRatio);
+    const splitIndex =
+      trainingData.length -
+      Math.floor(trainingData.length * this.testDataRatio);
     const trainSet = trainingData.slice(0, splitIndex);
     const testSet = trainingData.slice(splitIndex);
 
