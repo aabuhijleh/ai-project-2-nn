@@ -136,7 +136,7 @@ export default function Home() {
   }
 
   return (
-    <main className="flex flex-col min-h-screen items-center p-24 gap-12">
+    <div className="flex flex-col max-w-7xl min-h-screen pt-12 gap-12">
       <section id="config" className="w-full p-12 bg-slate-800">
         <ConfigForm
           onConfigUpdated={(config) => {
@@ -275,6 +275,6 @@ export default function Home() {
       </section>
 
       <Toaster />
-    </main>
+    </div>
   );
 }

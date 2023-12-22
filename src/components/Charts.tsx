@@ -27,20 +27,43 @@ export interface ChartProps {
     data: { x: number; y: number }[];
     color: string;
   }[];
+  xTitle: string;
+  yTitle: string;
   isLine?: boolean;
+  showLegend?: boolean;
 }
 
 export const Chart = ({
   title,
   datasets: sets,
   isLine = false,
+  xTitle,
+  yTitle,
+  showLegend = true,
 }: ChartProps) => {
   const options = {
+    scales: {
+      x: {
+        title: {
+          display: true,
+          text: xTitle,
+        },
+      },
+      y: {
+        title: {
+          display: true,
+          text: yTitle,
+        },
+      },
+    },
     responsive: true,
     plugins: {
       title: {
         display: true,
         text: title,
+      },
+      legend: {
+        display: showLegend,
       },
     },
   };

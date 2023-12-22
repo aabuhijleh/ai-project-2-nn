@@ -41,6 +41,8 @@ export const useDataset = (
     setSelectedDatasetChartInfo({
       title: trainingDataset.name,
       datasets,
+      xTitle: "Feature 1",
+      yTitle: "Feature 2",
     });
     setSelectedDatasetInfo(trainingDataset);
   }, [selectedDataset, trainingDatasets]);

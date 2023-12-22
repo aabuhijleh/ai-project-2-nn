@@ -17,7 +17,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={cn("dark", inter.className)}>{children}</body>
+      <body className={cn("dark", inter.className)}>
+        <main className="flex justify-center">{children}</main>
+      </body>
     </html>
   );
 }

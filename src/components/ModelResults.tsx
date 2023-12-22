@@ -15,7 +15,10 @@ export const ModelResults = ({
         color: "red",
       },
     ],
+    xTitle: "Epoch",
+    yTitle: "Loss",
     isLine: true,
+    showLegend: false,
   };
 
   const accuracyChartInfo = {
@@ -27,7 +30,10 @@ export const ModelResults = ({
         color: "green",
       },
     ],
+    xTitle: "Epoch",
+    yTitle: "Accuracy",
     isLine: true,
+    showLegend: false,
   };
 
   return (
